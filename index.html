@@ -7,10 +7,10 @@
   <meta name="generator" content="Mobirise v5.8.14, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/4ndlixrjbdoe9ztiz8zm.png" type="image/x-icon">
-  <meta name="description" content="This is our official Website for the Minecraft Server Hypixel.net! Join now with 1.8-1.19!">
+  <meta name="description" content="¡Este es nuestro sitio web oficial para el servidor de Minecraft play.tierraprometida.lat! ¡Únete ahora con 1.8-1.20!">
   
   
-  <title>Inicio | TierraPrometida</title>
+  <title>Inicio - TierraPrometida</title>
   <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
@@ -39,138 +39,57 @@
         <div class="container-fluid">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://www.tierraprometida.lat">
+                    <a href="https://mobiri.se">
                         <img src="assets/images/4ndlixrjbdoe9ztiz8zm.png" alt="Mobirise Website Builder" style="height: 3rem;">
                     </a>
                     <style>
                         .navbar-caption-wrap {
                           display: flex;
-                          align-items: center;
+                          flex-direction: column;
+                          align-items: flex-start;
                           margin-top: 7px;
+                          transition: transform 0.2s ease; /* Velocidad y tipo de transición */
+                        }
+                      
+                        .navbar-caption-wrap:hover {
+                          transform: scale(1.1); /* El valor 1.1 aumenta el tamaño en un 10% */
                         }
                       
                         .navbar-caption-text {
-                          top: -18%;
-                          left: 5%;
-                          display: inline-flex;
+                          display: flex;
                           align-items: center;
-                          position: relative;
-                          cursor: pointer;
-                          padding: 8px 12px;
-                          background-color: #e17f4e;
-                          border-radius: 8px;
-                          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                          color: #fff;
-                          font-weight: bold;
-                          text-decoration: none;
-                          transition: opacity 0.2s ease;
-                          /* Agregar un pseudo-elemento para el fondo oscurecido */
-                          position: relative;
-                          z-index: 1;
-                        }
-                      
-                        .navbar-caption-text::before {
-                          content: "";
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          right: 0;
-                          bottom: 0;
-                          background-color: rgba(0, 0, 0, 0.2); /* Color oscuro semitransparente */
-                          border-radius: 8px;
-                          z-index: -1;
-                          opacity: 0; /* Comenzar invisible */
-                          transition: opacity 0.2s ease;
-                        }
-                      
-                        /* Al pasar el ratón por encima, hacer que el fondo oscurecido aparezca */
-                        .navbar-caption-text:hover::before {
-                          opacity: 1;
                         }
                       
                         .navbar-caption-text i {
                           margin-left: 5px;
                         }
-                      
-                        .ip-text {
-                          font-size: 12px;
-                          position: absolute;
-                          top: 170%;
-                          left: 0;
-                          opacity: 0;
-                          transform: translateY(-10px);
-                          transition: opacity 0.2s ease, transform 0.2s ease;
-                        }
-                      
-                        /* Establecer el mismo tamaño de fuente para el texto original */
-                        .navbar-caption-text .original-text {
-                          font-size: 12px;
-                          position: absolute;
-                          top: 110%;
-                          left: 0;
-                          font-weight: normal;
-                          transition: color 0.2s ease, opacity 0.2s ease;
-                        }
-                      
-                        .navbar-caption-text .original-text,
-                        .ip-text {
-                          font-weight: bold;
-                          color: rgb(1, 17, 26);
-                        }
-                      
-                        /* Fuente en negrita para el contador de jugadores y el texto "JUGADORES CONECTADOS" */
-                        .navbar-caption-text span[data-playercounter-ip="play.tierraprometida.lat"],
-                        .navbar-caption-text span[data-playercounter-ip="play.tierraprometida.lat"] + span {
-                          font-weight: bold;
-                          color: #fff;
-                        }
-                      
-                        .navbar-caption-text:hover .ip-text {
-                          opacity: 1;
-                          transform: translateY(-20px);
-                        }
-                      
-                        /* Cambiar el color y la opacidad del texto, y hacer que se vea en negrita al pasar el ratón por encima */
-                        .navbar-caption-text:hover .original-text {
-                          opacity: 0;
-                        }
                       </style>
                       
                       <span class="navbar-caption-wrap">
-                        <a class="navbar-caption-text" href="#" onclick="copyIP()">
-                          <span data-playercounter-ip="play.tierraprometida.lat">0</span>
-                          <span style="margin-left: 5px;">En Linea</span>
-                          <span class="ip-text">¡Click para copiar la IP!</span>
-                          <span class="original-text">play.tierraprometida.lat</span>
-                        </a>
-                      </span>
-                      
-                      
-                      <script src="https://cdn.jsdelivr.net/gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
-                      <script>
-                        function copyIP() {
-                          const tempInput = document.createElement("input");
-                          tempInput.value = "play.tierraprometida.lat";
-                          document.body.appendChild(tempInput);
-                      
-                          tempInput.select();
-                          document.execCommand("copy");
-                      
-                          document.body.removeChild(tempInput);
-                      
-                          alert("Ip copiada: play.tierraprometida.lat");
-                        }
-                      
-                        // Aquí inicializamos el contador de jugadores después de que se cargue el DOM
-                        document.addEventListener("DOMContentLoaded", function() {
-                          new McPlayerCounter({
-                            ip: "play.tierraprometida.lat",
-                            element: document.querySelector("[data-playercounter-ip='play.tierraprometida.lat']")
-                          });
-                        });
-                      </script>
-                               
-                      
+                        <span class="navbar-caption-text">
+                          <a id="copyLink" class="navbar-caption text-warning text-primary display-7">
+                            Tierra Prometida
+                          </a>
+                          <i class="fas fa-copy"></i>
+                        </span>
+                        <span style="font-size: 12px;">¡Click para copiar la IP!</span>
+                      </span>    
+                
+
+                <script>
+                    document.getElementById("copyLink").addEventListener("click", function() {
+                      const tempInput = document.createElement("input");
+                      tempInput.value = "play.tierraprometida.lat";
+                      document.body.appendChild(tempInput);
+                  
+                      tempInput.select();
+                      document.execCommand("copy");
+                  
+                      document.body.removeChild(tempInput);
+                  
+                      alert("Texto copiado al portapapeles: play.tierraprometida.lat");
+                    });
+                  </script>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -384,7 +303,10 @@
                                 <div class="item-wrapper position-relative">
                                     <img src="assets/images/team4.jpg" alt="Mobirise Website Builder" data-slide-to="0" data-bs-slide-to="0">
                                 </div>
-                            
+                            </div>
+                            <div class="user_text mb-4">
+                                <p class="mbr-fonts-style display-7">
+                                    Dueño de Palacraft y posteriormente Tierra Prometida desde 2018.</p>
                             </div>
                             <div class="user_name mbr-fonts-style mb-2 display-7">
                                 <strong>Osa</strong></div>
@@ -397,7 +319,11 @@
                                 <div class="item-wrapper position-relative">
                                     <img src="assets/images/team5.jpg" alt="Mobirise Website Builder" data-slide-to="1" data-bs-slide-to="1">
                                 </div>
-                            
+                            </div>
+                            <div class="user_text mb-4">
+                                <p class="mbr-fonts-style display-7">
+                                    Dueño de Palacraft y posteriormente Tierra Prometida desde 2018.
+                                </p>
                             </div>
                             <div class="user_name mbr-fonts-style mb-2 display-7">
                                 <strong>DarkMortol</strong></div>
@@ -425,7 +351,7 @@
     
     <div class="position-relative text-center">
         <div class="mbr-section-head">
-            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Algunas de nuestras modalidades...</strong></h4>
+            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Nuestros Servidores</strong></h4>
             
         </div>
         <div class="embla mt-4" data-skip-snaps="true" data-align="center" data-contain-scroll="trimSnaps" data-auto-play-interval="5" data-draggable="true">
