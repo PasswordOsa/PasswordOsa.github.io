@@ -41,99 +41,132 @@
                         <img src="assets/images/4ndlixrjbdoe9ztiz8zm.png" alt="Mobirise Website Builder" style="height: 3rem;">
                     </a>
                     <style>
-                        .navbar-caption-wrap {
-                          display: flex;
-                          align-items: center;
-                          margin-top: 7px;
-                        }
-                      
-                        .navbar-caption-text {
-                          display: flex;
-                          align-items: center;
-                          position: relative;
-                          cursor: pointer;
-                        }
-                      
-                        .navbar-caption-text i {
-                          margin-left: 5px;
-                        }
-                      
-                        .ip-text {
-                          font-size: 12px;
-                          position: absolute;
-                          top: 210%;
-                          left: 0;
-                          opacity: 0;
-                          transform: translateY(-10px);
-                          transition: opacity 0.2s ease, transform 0.2s ease;
-                        }
-                      
-                        /* Establecer el mismo tamaño de fuente para el texto original */
-                        .navbar-caption-text .original-text {
-                          font-size: 12px;
-                          position: absolute;
-                          top: 110%;
-                          left: 0;
-                        }
-                      
-                        /* Fuente en negrita para el contador de jugadores y el texto "JUGADORES CONECTADOS" */
-                        .navbar-caption-text span[data-playercounter-ip="play.tierraprometida.lat"],
-                        .navbar-caption-text span[data-playercounter-ip="play.tierraprometida.lat"] + span {
-                          font-weight: bold;
-                        }
-                      
-                        .navbar-caption-text:hover .ip-text {
-                          opacity: 1;
-                          transform: translateY(-20px);
-                        }
-                      
-                        .navbar-caption-text:hover .original-text {
-                          opacity: 0;
-                        }
-                      
-                        .navbar-caption-text:hover .ip-text:after {
-                          position: absolute;
-                          top: 100%;
-                          left: 50%;
-                          width: 1px;
-                          height: 10px;
-                          background-color: #000;
-                          transform: translateX(-50%);
-                        }
-                      </style>
-                      
-                      <span class="navbar-caption-wrap">
-                        <span class="navbar-caption-text">
-                          <span data-playercounter-ip="play.tierraprometida.lat">0</span>
-                          <span style="margin-left: 5px;">JUGADORES CONECTADOS</span>
-                          <span class="ip-text">play.tierraprometida.lat</span>
-                          <span class="original-text" onclick="copyIP()">¡Click para copiar la IP!</span>
-                        </span>
-                      </span>
-                      
-                      <script src="https://cdn.jsdelivr.net/gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
-                      <script>
-                        function copyIP() {
-                          const tempInput = document.createElement("input");
-                          tempInput.value = "play.tierraprometida.lat";
-                          document.body.appendChild(tempInput);
-                      
-                          tempInput.select();
-                          document.execCommand("copy");
-                      
-                          document.body.removeChild(tempInput);
-                      
-                          alert("Ip copiada: play.tierraprometida.lat");
-                        }
-                      
-                        // Aquí inicializamos el contador de jugadores después de que se cargue el DOM
-                        document.addEventListener("DOMContentLoaded", function() {
-                          new McPlayerCounter({
-                            ip: "play.tierraprometida.lat",
-                            element: document.querySelector("[data-playercounter-ip='play.tierraprometida.lat']")
-                          });
+                      .navbar-caption-wrap {
+                        display: flex;
+                        align-items: center;
+                        margin-top: 7px;
+                      }
+                    
+                      .navbar-caption-text {
+                        top: -18%;
+                        left: 5%;
+                        display: inline-flex;
+                        align-items: center;
+                        position: relative;
+                        cursor: pointer;
+                        padding: 8px 12px;
+                        background-color: #e17f4e;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        color: #fff;
+                        font-weight: bold;
+                        text-decoration: none;
+                        transition: opacity 0.2s ease;
+                        /* Agregar un pseudo-elemento para el fondo oscurecido */
+                        position: relative;
+                        z-index: 1;
+                      }
+                    
+                      .navbar-caption-text::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: rgba(0, 0, 0, 0.2); /* Color oscuro semitransparente */
+                        border-radius: 8px;
+                        z-index: -1;
+                        opacity: 0; /* Comenzar invisible */
+                        transition: opacity 0.2s ease;
+                      }
+                    
+                      /* Al pasar el ratón por encima, hacer que el fondo oscurecido aparezca */
+                      .navbar-caption-text:hover::before {
+                        opacity: 1;
+                      }
+                    
+                      .navbar-caption-text i {
+                        margin-left: 5px;
+                      }
+                    
+                      .ip-text {
+                        font-size: 12px;
+                        position: absolute;
+                        top: 170%;
+                        left: 0;
+                        opacity: 0;
+                        transform: translateY(-10px);
+                        transition: opacity 0.2s ease, transform 0.2s ease;
+                      }
+                    
+                      /* Establecer el mismo tamaño de fuente para el texto original */
+                      .navbar-caption-text .original-text {
+                        font-size: 12px;
+                        position: absolute;
+                        top: 110%;
+                        left: 0;
+                        font-weight: normal;
+                        transition: color 0.2s ease, opacity 0.2s ease;
+                      }
+                    
+                      .navbar-caption-text .original-text,
+                      .ip-text {
+                        font-weight: bold;
+                        color: rgb(1, 17, 26);
+                      }
+                    
+                      /* Fuente en negrita para el contador de jugadores y el texto "JUGADORES CONECTADOS" */
+                      .navbar-caption-text span[data-playercounter-ip="play.tierraprometida.lat"],
+                      .navbar-caption-text span[data-playercounter-ip="play.tierraprometida.lat"] + span {
+                        font-weight: bold;
+                        color: #fff;
+                      }
+                    
+                      .navbar-caption-text:hover .ip-text {
+                        opacity: 1;
+                        transform: translateY(-20px);
+                      }
+                    
+                      /* Cambiar el color y la opacidad del texto, y hacer que se vea en negrita al pasar el ratón por encima */
+                      .navbar-caption-text:hover .original-text {
+                        opacity: 0;
+                      }
+                    </style>
+                    
+                    <span class="navbar-caption-wrap">
+                      <a class="navbar-caption-text" href="#" onclick="copyIP()">
+                        <span data-playercounter-ip="play.tierraprometida.lat">0</span>
+                        <span style="margin-left: 5px;">En Linea</span>
+                        <span class="ip-text">¡Click para copiar la IP!</span>
+                        <span class="original-text">play.tierraprometida.lat</span>
+                      </a>
+                    </span>
+                    
+                    
+                    <script src="https://cdn.jsdelivr.net/gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
+                    <script>
+                      function copyIP() {
+                        const tempInput = document.createElement("input");
+                        tempInput.value = "play.tierraprometida.lat";
+                        document.body.appendChild(tempInput);
+                    
+                        tempInput.select();
+                        document.execCommand("copy");
+                    
+                        document.body.removeChild(tempInput);
+                    
+                        alert("Ip copiada: play.tierraprometida.lat");
+                      }
+                    
+                      // Aquí inicializamos el contador de jugadores después de que se cargue el DOM
+                      document.addEventListener("DOMContentLoaded", function() {
+                        new McPlayerCounter({
+                          ip: "play.tierraprometida.lat",
+                          element: document.querySelector("[data-playercounter-ip='play.tierraprometida.lat']")
                         });
-                      </script>
+                      });
+                    </script>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
